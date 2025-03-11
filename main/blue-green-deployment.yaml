@@ -41,7 +41,6 @@ metadata:
 spec:
   selector:
     app: blogapp
-    version: blue
   ports:
     - protocol: TCP
       port: 8080
