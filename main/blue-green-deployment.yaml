@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: restaurantapp
-        image: 762233737972.dkr.ecr.ap-south-1.amazonaws.com/devops:391c456
+        image: 762233737972.dkr.ecr.ap-south-1.amazonaws.com/devops:24fd4d6
         ports:
         - containerPort: 8080
 ---
@@ -40,7 +40,7 @@ spec:
     spec:
       containers:
       - name: restaurantapp
-        image: 762233737972.dkr.ecr.ap-south-1.amazonaws.com/devops:391c456
+        image: 762233737972.dkr.ecr.ap-south-1.amazonaws.com/devops:24fd4d6
         ports:
         - containerPort: 8080
 ---
