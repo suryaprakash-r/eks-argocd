@@ -16,6 +16,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: restaurantapp-blue-svc  # Default to blue
+            name: restaurantapp-green-svc  # Default to blue
             port:
               number: 8080
