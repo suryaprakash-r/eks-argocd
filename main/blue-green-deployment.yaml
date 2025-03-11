@@ -1,73 +1,37 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: restaurantapp-blue
+  name: blogapp
   namespace: webapps
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: restaurantapp
+      app: blogapp
       version: blue
   template:
     metadata:
       labels:
-        app: restaurantapp
+        app: blogapp
         version: blue
     spec:
       containers:
-      - name: restaurantapp
+      - name: blogapp
         image: 762233737972.dkr.ecr.ap-south-1.amazonaws.com/devops:24fd4d6
         ports:
         - containerPort: 8080
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: restaurantapp-green
-  namespace: webapps
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: restaurantapp
-      version: green
-  template:
-    metadata:
-      labels:
-        app: restaurantapp
-        version: green
-    spec:
-      containers:
-      - name: restaurantapp
-        image: 762233737972.dkr.ecr.ap-south-1.amazonaws.com/devops:24fd4d6
-        ports:
-        - containerPort: 8080
----
+
 apiVersion: v1
 kind: Service
 metadata:
-  name: restaurantapp-blue-svc
+  name: blogapp-svc
   namespace: webapps
 spec:
   selector:
-    app: restaurantapp
+    app: blogapp
     version: blue
   ports:
     - protocol: TCP
       port: 8080
       targetPort: 8080
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: restaurantapp-green-svc
-  namespace: webapps
-spec:
-  selector:
-    app: restaurantapp
-    version: green
-  ports:
-    - protocol: TCP
-      port: 8080
-      targetPort: 8080
+
