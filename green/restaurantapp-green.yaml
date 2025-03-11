@@ -18,5 +18,15 @@ spec:
       containers:
       - name: restaurantapp
         image: 762233737972.dkr.ecr.ap-south-1.amazonaws.com/devops:1c9d1da
-        ports:
-        - containerPort: 8080
+        readinessProbe:
+            httpGet:
+              path: /blog
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /blog
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 20
