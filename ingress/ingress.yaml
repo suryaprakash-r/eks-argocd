@@ -5,10 +5,10 @@ metadata:
   namespace: webapps
 spec:
   rules:
-  - host: cloud.foodenginepos.com
+  - host: test.foodenginepos.com
     http:
       paths:
-      - path: /
+      - path: /blog
         pathType: Prefix
         backend:
           service:
